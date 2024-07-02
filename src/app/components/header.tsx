@@ -12,6 +12,9 @@ const Header = () => {
         <p className="mt-2 text-xl text-magenta">Dev Store</p>
       </div>
       <Link href="/chart">
+        <div className="w-4 h-4 bg-darker-gray rounded-full absolute text-white ml-5 -mt-1">
+          <p className="text-xs text-white ml-1">2</p>
+        </div>
         <Image src={Chart} alt="Shopping Chart Icon" />
       </Link>
     </header>
