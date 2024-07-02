@@ -15,6 +15,7 @@ module.exports = {
       magenta: "#a31c76",
       "border-gray": "#c6c6c6",
       white: "#ffffff",
+      green: "#869f64",
     },
   },
   plugins: [],
