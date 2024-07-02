@@ -10,17 +10,21 @@ const Card = ({ title, description, price, initialPrice, onClick }) => {
       <div className="m-6">
         <Image src={ComputerImage} alt="" />
       </div>
-      <div className="h-[2px]  bg-gray" />
+      <div className="h-[0.5px] bg-medium-gray" />
       <div className="px-4 py-2">
         <h2 className="font-bold text-xl mb-2 text-center text-magenta">
           {title}
         </h2>
-        <p className="text-sm text-start">{description}</p>
+        <p className="text-[12px] text-start">{description}</p>
       </div>
-      <div className="flex px-4 py-2 justify-between">
+      <div className="flex flex-wrap gap-2 px-4 py-2 justify-between">
         <div className="flex">
           <p className="text-start font-bold">{`$${price}`}</p>
-          <p className="text-[10px] mt-0.5 line-through">{`$${initialPrice}`}</p>
+          {initialPrice !== undefined && (
+            <p className="text-[10px] mt-0.5 line-through">
+              {`$${initialPrice}`}
+            </p>
+          )}
         </div>
         <AddButton onClick={onClick} />
       </div>
