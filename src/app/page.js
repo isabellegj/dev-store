@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray">
       <Header count={clickCount} />
-      <div className="grid md:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-10 justify-center">
+      <div className="grid md:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-5 justify-center">
         {cachedProducts.map((product) => (
           <Card key={product.id} product={product} />
         ))}

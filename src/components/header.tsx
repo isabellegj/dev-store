@@ -9,7 +9,7 @@ const Header = () => {
   const { count } = useGlobalState();
 
   return (
-    <header className="py-1 px-4 lg:px-40 flex justify-between items-center bg-medium-gray border-b-2 border-b-border-gray">
+    <header className="py-1 px-4 lg:px-[170px] flex justify-between items-center bg-medium-gray border-b-2 border-b-border-gray">
       <div className="flex-shrink-0 lg:w-auto">
         <Link href="/">
           <div className="flex items-center gap-2">
