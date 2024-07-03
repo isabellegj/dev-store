@@ -61,7 +61,7 @@ const Table = () => {
                         />
                       </div>
                       <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-sm text-gray-900">
                           {product.title}
                         </div>
                       </div>
