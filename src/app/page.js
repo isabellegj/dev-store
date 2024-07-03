@@ -9,7 +9,7 @@ export default function Home() {
   const [clickCount, setClickCount] = useState(0);
 
   const handleClick = () => {
-    setClickCount(clickCount + 1);
+    setClickCount((prevCount) => prevCount + 1);
   };
 
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <Header count={clickCount} />
       <div className="grid md:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-10 justify-center">
         {products.map((product) => (
-          <Card key={product.id} product={product} onClick={handleClick} />
+          <Card key={product.id} product={product} />
         ))}
       </div>
     </div>

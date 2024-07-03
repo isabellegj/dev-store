@@ -1,11 +1,12 @@
-import Image from "next/image";
+"use client";
 import Header from "../../components/header";
+import Table from "../../components/table";
 
 export default function Chart() {
   return (
     <div>
       <Header />
-      CHART
+      <Table />
     </div>
   );
 }

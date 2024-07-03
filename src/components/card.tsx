@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import AddButton from "./addButton";
 
-const Card = ({ product, onClick }) => {
+const Card = ({ product }) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-lg m-4 max-w-xs lg:h-[450px]">
       <div className="m-6">
@@ -29,7 +29,7 @@ const Card = ({ product, onClick }) => {
             </p>
           )}
         </div>
-        <AddButton onClick={onClick} />
+        <AddButton product={product} />
       </div>
     </div>
   );

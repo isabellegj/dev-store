@@ -1,27 +1,26 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { useGlobalState } from "../context/GlobalStateContext";
 
-const AddButton = ({ onClick }) => {
-  const [isAdded, setIsAdded] = useState(false);
+const AddButton = ({ product }) => {
+  const { isAdded, handleAddToCart } = useGlobalState();
+  const added = !!isAdded[product.id];
 
   const handleClick = () => {
-    setIsAdded(true);
-    if (onClick) {
-      onClick();
-    }
+    handleAddToCart(product);
   };
 
   return (
     <button
       onClick={handleClick}
       className={`rounded p-1 text-[10px] font-bold ${
-        isAdded
+        added
           ? "bg-white text-green"
           : "bg-magenta hover:bg-lighter-magenta text-white"
       }`}
-      disabled={isAdded}
+      disabled={added}
     >
-      {isAdded ? "in the cart" : "add to cart +"}
+      {added ? "in the cart" : "add to cart +"}
     </button>
   );
 };

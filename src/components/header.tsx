@@ -3,8 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/images/logo.svg";
 import Chart from "../../public/images/chart-icon.svg";
+import { useGlobalState } from "../context/GlobalStateContext";
 
-const Header = ({ count }) => {
+const Header = () => {
+  const { count } = useGlobalState();
+
   return (
     <header className="py-1 px-10 flex justify-between items-center bg-medium-gray border-b-2 border-b-border-gray lg:px-40">
       <Link href="/">
