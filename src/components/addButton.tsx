@@ -1,13 +1,19 @@
 "use client";
 import React from "react";
 import { useGlobalState } from "../context/GlobalStateContext";
+import { toast } from "react-toastify";
 
 const AddButton = ({ product }) => {
   const { isAdded, handleAddToCart } = useGlobalState();
   const added = !!isAdded[product.id];
 
-  const handleClick = () => {
-    handleAddToCart(product);
+  const handleClick = async () => {
+    try {
+      await handleAddToCart(product);
+      toast.success("Product has been added to cart");
+    } catch (error) {
+      toast.error("Error adding product to cart");
+    }
   };
 
   return (

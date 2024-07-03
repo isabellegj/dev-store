@@ -15,15 +15,22 @@ export const GlobalStateProvider = ({ children }) => {
   });
 
   const handleAddToCart = (product) => {
-    setIsAdded((prevIsAdded) => {
-      const updatedIsAdded = { ...prevIsAdded };
-      const quantity = updatedIsAdded[product.id]
-        ? updatedIsAdded[product.id].quantity + 1
-        : 1;
-      updatedIsAdded[product.id] = { ...product, quantity };
-      return updatedIsAdded;
+    return new Promise((resolve, reject) => {
+      try {
+        setIsAdded((prevIsAdded) => {
+          const updatedIsAdded = { ...prevIsAdded };
+          const quantity = updatedIsAdded[product.id]
+            ? updatedIsAdded[product.id].quantity + 1
+            : 1;
+          updatedIsAdded[product.id] = { ...product, quantity };
+          return updatedIsAdded;
+        });
+        setCount((prevCount) => prevCount + 1);
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
     });
-    setCount((prevCount) => prevCount + 1);
   };
 
   const handleRemoveFromCart = (productId) => {

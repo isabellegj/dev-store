@@ -10,7 +10,7 @@ const Table = () => {
     let total = 0;
     Object.keys(isAdded).forEach((productId) => {
       const product = isAdded[productId];
-      total += product.quantity * product.price; // Multiplica pela quantidade do produto
+      total += product.quantity * product.price;
     });
     return total;
   };
