@@ -4,16 +4,15 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const GlobalStateContext = createContext();
 
 export const GlobalStateProvider = ({ children }) => {
-  const [count, setCount] = useState(0);
-  const [isAdded, setIsAdded] = useState({});
-
-  useEffect(() => {
+  const [count, setCount] = useState(() => {
     const storedCount = localStorage.getItem("count");
-    const storedIsAdded = localStorage.getItem("isAdded");
+    return storedCount ? Number(storedCount) : 0;
+  });
 
-    if (storedCount) setCount(Number(storedCount));
-    if (storedIsAdded) setIsAdded(JSON.parse(storedIsAdded));
-  }, []);
+  const [isAdded, setIsAdded] = useState(() => {
+    const storedIsAdded = localStorage.getItem("isAdded");
+    return storedIsAdded ? JSON.parse(storedIsAdded) : {};
+  });
 
   const handleAddToCart = (product) => {
     setIsAdded((prevIsAdded) => {

@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-full bg-gray">
+    <div className="min-h-screen bg-gray">
       <Header count={clickCount} />
       <div className="grid md:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-10 justify-center">
         {products.map((product) => (
