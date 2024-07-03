@@ -16,16 +16,25 @@ export const GlobalStateProvider = ({ children }) => {
   }, []);
 
   const handleAddToCart = (product) => {
-    setIsAdded((prevIsAdded) => ({
-      ...prevIsAdded,
-      [product.id]: product,
-    }));
+    setIsAdded((prevIsAdded) => {
+      const updatedIsAdded = { ...prevIsAdded };
+      const quantity = updatedIsAdded[product.id]
+        ? updatedIsAdded[product.id].quantity + 1
+        : 1;
+      updatedIsAdded[product.id] = { ...product, quantity };
+      return updatedIsAdded;
+    });
     setCount((prevCount) => prevCount + 1);
   };
 
   const handleRemoveFromCart = (productId) => {
     const updatedIsAdded = { ...isAdded };
-    delete updatedIsAdded[productId];
+    const currentQuantity = updatedIsAdded[productId].quantity;
+    if (currentQuantity === 1) {
+      delete updatedIsAdded[productId];
+    } else {
+      updatedIsAdded[productId].quantity = currentQuantity - 1;
+    }
     setIsAdded(updatedIsAdded);
     setCount((prevCount) => prevCount - 1);
   };

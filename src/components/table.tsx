@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useGlobalState } from "../context/GlobalStateContext";
 
 const Table = () => {
-  const { isAdded, handleRemoveFromCart, count } = useGlobalState();
+  const { isAdded, handleRemoveFromCart } = useGlobalState();
 
   const calculateTotal = () => {
     let total = 0;
     Object.keys(isAdded).forEach((productId) => {
       const product = isAdded[productId];
-      total += count * product.price;
+      total += product.quantity * product.price; // Multiplica pela quantidade do produto
     });
     return total;
   };
@@ -67,7 +67,7 @@ const Table = () => {
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {count}
+                  {product.quantity}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   ${product.price.toFixed(2)}
