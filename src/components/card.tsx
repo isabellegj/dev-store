@@ -23,7 +23,9 @@ const Card = ({ product }) => {
       <div className="flex flex-wrap gap-2 px-4 py-2 justify-between">
         <div className="flex">
           <p className="text-start font-bold">{`$${product.price}`}</p>
-          {product.initialPrice !== undefined && (
+          {product.initialPrice === undefined ? (
+            <div className="mr-10" />
+          ) : (
             <p className="text-[10px] mt-0.5 line-through">
               {`$${product.initialPrice}`}
             </p>
