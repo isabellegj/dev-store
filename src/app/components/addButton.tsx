@@ -1,13 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 
 const AddButton = ({ onClick }) => {
   const [isAdded, setIsAdded] = useState(false);
 
   const handleClick = () => {
     setIsAdded(true);
-    onClick();
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (

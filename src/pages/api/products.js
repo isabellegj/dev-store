@@ -1,26 +1,33 @@
-// src/pages/api/products.js
 const products = [
   {
     id: 1,
-    title: "Notebook Exemplo",
-    description: "Este é um notebook fictício para demonstração.",
-    price: 4000.0,
-    initialPrice: 5000.0,
-    imageUrl: "../../../public/images/computagor.jpg", // Caminho para sua imagem de exemplo
+    title: "Produto 1",
+    description: "Descrição do Produto 1",
+    price: 19.99,
+    initialPrice: 20,
+    imageUrl: "/images/notebook.jpg",
   },
   {
     id: 2,
-    title: "Mouse Gamer",
-    description: "Mouse ergonômico para jogadores exigentes.",
-    price: 150.0,
-    imageUrl: "../../../public/images/computagor.jpg", // Caminho para outra imagem de exemplo
+    title: "Produto 2",
+    description: "Descrição do Produto 2",
+    price: 29.99,
+    initialPrice: 20,
+    imageUrl: "/images/notebook.jpg",
   },
-  // Adicione mais produtos conforme necessário
+  {
+    id: 3,
+    title: "Produto 3",
+    description: "Descrição do Produto 3",
+    price: 39.99,
+    initialPrice: 20,
+    imageUrl: "/images/notebook.jpg",
+  },
 ];
 
-export default (req, res) => {
-  // Simulando um atraso para simular uma requisição assíncrona
+export default function handler(req, res) {
+  // Simulando um pequeno atraso de 500ms para simular uma requisição assíncrona
   setTimeout(() => {
     res.status(200).json(products);
-  }, 1000); // Simula um tempo de resposta de 1 segundo
-};
+  }, 500);
+}

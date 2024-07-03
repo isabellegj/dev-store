@@ -2,8 +2,10 @@
 import Header from "./components/header";
 import Card from "./components/card";
 import { useState } from "react";
+import useProducts from "../useProducts";
 
-export default function Home({ products }) {
+export default function Home() {
+  const products = useProducts();
   const [clickCount, setClickCount] = useState(0);
 
   const handleClick = () => {
@@ -15,28 +17,9 @@ export default function Home({ products }) {
       <Header count={clickCount} />
       <div className="grid sm:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-10 justify-center">
         {products.map((product) => (
-          <Card
-            key={product.id}
-            onClick={handleClick}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            initialPrice={product.initialPrice}
-          />
+          <Card key={product.id} product={product} onClick={handleClick} />
         ))}
       </div>
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  // Fazendo a requisição para buscar os produtos da API
-  const res = await fetch(`http://localhost:3000/api/products`);
-  const products = await res.json();
-
-  return {
-    props: {
-      products,
-    },
-  };
 }
