@@ -1,8 +1,8 @@
 "use client";
-import Header from "./components/header";
-import Card from "./components/card";
+import Header from "../components/header";
+import Card from "../components/card";
 import { useState } from "react";
-import useProducts from "../useProducts";
+import useProducts from "../hooks/useProducts";
 
 export default function Home() {
   const products = useProducts();
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="h-full bg-gray">
       <Header count={clickCount} />
-      <div className="grid sm:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-10 justify-center">
+      <div className="grid md:grid-cols-[repeat(4,1fr)] grid-rows-[repeat(x,1fr)] lg:px-40 py-10 justify-center">
         {products.map((product) => (
           <Card key={product.id} product={product} onClick={handleClick} />
         ))}

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../public/images/logo.svg";
-import Chart from "../../../public/images/chart-icon.svg";
+import Logo from "../../public/images/logo.svg";
+import Chart from "../../public/images/chart-icon.svg";
 
 const Header = ({ count }) => {
   return (

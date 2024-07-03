@@ -1,32 +1,67 @@
 const products = [
   {
     id: 1,
-    title: "Produto 1",
-    description: "Descrição do Produto 1",
-    price: 19.99,
-    initialPrice: 20,
+    title: "Notebook 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 1999.99,
+    initialPrice: 2200.9,
     imageUrl: "/images/notebook.jpg",
   },
   {
     id: 2,
-    title: "Produto 2",
-    description: "Descrição do Produto 2",
-    price: 29.99,
-    initialPrice: 20,
+    title: "Notebook 2",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 2900.99,
+    initialPrice: 3222.99,
     imageUrl: "/images/notebook.jpg",
   },
   {
     id: 3,
-    title: "Produto 3",
-    description: "Descrição do Produto 3",
-    price: 39.99,
-    initialPrice: 20,
+    title: "Notebook 3",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 3950.99,
+    imageUrl: "/images/notebook.jpg",
+  },
+  {
+    id: 4,
+    title: "Notebook 4",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 3900.99,
+    imageUrl: "/images/notebook.jpg",
+  },
+  {
+    id: 5,
+    title: "Notebook 5",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 2539.99,
+    initialPrice: 2990.99,
+    imageUrl: "/images/notebook.jpg",
+  },
+  {
+    id: 6,
+    title: "Notebook 6",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 3339.99,
+    imageUrl: "/images/notebook.jpg",
+  },
+  {
+    id: 7,
+    title: "Notebook 7",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 2539.99,
+    imageUrl: "/images/notebook.jpg",
+  },
+  {
+    id: 8,
+    title: "Notebook 8",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: 4999.99,
+    initialPrice: 5520.0,
     imageUrl: "/images/notebook.jpg",
   },
 ];
 
 export default function handler(req, res) {
-  // Simulando um pequeno atraso de 500ms para simular uma requisição assíncrona
   setTimeout(() => {
     res.status(200).json(products);
   }, 500);
