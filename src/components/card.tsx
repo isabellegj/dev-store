@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import AddButton from "./addButton";
+import AddButton from "./AddButton";
 
 const Card = ({ product }) => {
   return (

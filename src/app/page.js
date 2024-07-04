@@ -1,6 +1,6 @@
 "use client";
-import Header from "../components/header";
-import Card from "../components/card";
+import Header from "../components/Header";
+import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import useProducts from "../hooks/useProducts";
 
