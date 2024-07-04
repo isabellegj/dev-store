@@ -9,7 +9,7 @@ const Header = () => {
   const { count } = useGlobalState();
 
   return (
-    <header className="py-1 px-4 lg:px-[170px] flex justify-between items-center bg-medium-gray border-b-2 border-b-border-gray">
+    <header className="flex justify-between align-center bg-medium-gray border-b-2 border-b-border-gray py-1 lg:px-40 px-4">
       <div className="flex-shrink-0 lg:w-auto">
         <Link href="/">
           <div className="flex items-center gap-2">
@@ -20,10 +20,10 @@ const Header = () => {
           </div>
         </Link>
       </div>
-      <div className="flex-shrink-0 max-w-full lg:w-auto flex justify-end">
+      <div className="mt-1">
         <Link href="/chart">
           <div className="relative">
-            <div className="w-4 h-4 bg-darker-gray rounded-full absolute top-0 right-0 -mt-1 text-white">
+            <div className="w-4 h-4 bg-darker-gray rounded-full absolute top-0 -right-1 -mt-1 text-white">
               <p className="text-xs text-white ml-1">{count}</p>
             </div>
             <Image

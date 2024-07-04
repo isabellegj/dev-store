@@ -22,7 +22,7 @@ const Card = ({ product }) => {
       </div>
       <div className="flex flex-wrap gap-2 px-4 py-2 justify-between">
         <div className="flex">
-          <p className="text-start font-bold">{`$${product.price}`}</p>
+          <p className="text-start font-bold ">{`$${product.price}`}</p>
           {product.initialPrice === undefined ? (
             <div className="mr-10" />
           ) : (

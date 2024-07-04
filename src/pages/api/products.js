@@ -3,8 +3,8 @@ const products = [
     id: 1,
     title: "Notebook 1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: 1999.99,
-    initialPrice: 2200.9,
+    price: 2999.99,
+    initialPrice: 3500.99,
     imageUrl: "/images/notebook.jpg",
   },
   {
@@ -56,7 +56,7 @@ const products = [
     title: "Notebook 8",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: 4999.99,
-    initialPrice: 5520.0,
+    initialPrice: 5520.99,
     imageUrl: "/images/notebook.jpg",
   },
 ];
